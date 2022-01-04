@@ -1,4 +1,4 @@
-import {chrome} from '../../.electron-vendors.cache.json';
+import * as ElectronVendorsCacheJson from '../../.electron-vendors.cache.json';
 import {join} from 'path';
 import {builtinModules} from 'module';
 
@@ -19,7 +19,7 @@ const config = {
   },
   build: {
     sourcemap: 'inline',
-    target: `chrome${chrome}`,
+    target: `chrome${ElectronVendorsCacheJson.chrome}`,
     outDir: 'dist',
     assetsDir: '.',
     minify: process.env.MODE !== 'development',
@@ -28,10 +28,7 @@ const config = {
       formats: ['cjs'],
     },
     rollupOptions: {
-      external: [
-        'electron',
-        ...builtinModules,
-      ],
+      external: ['electron', ...builtinModules],
       output: {
         entryFileNames: '[name].cjs',
       },

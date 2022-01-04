@@ -32,9 +32,7 @@ const config = {
     outDir: 'dist',
     assetsDir: '.',
     rollupOptions: {
-      external: [
-        ...builtinModules,
-      ],
+      external: [...builtinModules],
     },
     emptyOutDir: true,
     brotliSize: false,

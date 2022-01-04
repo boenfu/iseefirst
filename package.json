@@ -1,5 +1,5 @@
 {
-  "name": "vite-electron-builder",
+  "name": "pick-it",
   "private": true,
   "engines": {
     "node": ">=v16.13",
@@ -13,7 +13,7 @@
     "pretest": "npm run build",
     "test": "node tests/app.spec.js",
     "watch": "node scripts/watch.js",
-    "lint": "eslint . --ext js,ts,vue",
+    "lint": "prettier --check . && eslint . --ext js,ts,vue",
     "typecheck-main": "tsc --noEmit -p packages/main/tsconfig.json",
     "typecheck-preload": "tsc --noEmit -p packages/preload/tsconfig.json",
     "typecheck-renderer": "vue-tsc --noEmit -p packages/renderer/tsconfig.json",
@@ -21,25 +21,32 @@
     "pretypecheck-renderer": "dts-cb -i packages/preload/src/**/*.ts -o packages/preload/exposedInMainWorld.d.ts"
   },
   "devDependencies": {
+    "@mufan/code": "^0.2.10",
+    "@mufan/eslint-plugin": "^0.1.48",
     "@types/electron-devtools-installer": "2.2.1",
     "@typescript-eslint/eslint-plugin": "5.8.1",
     "@vitejs/plugin-vue": "2.0.1",
     "cross-env": "7.0.3",
     "dts-for-context-bridge": "0.7.1",
-    "electron": "16.0.5",
     "electron-builder": "22.14.5",
-    "electron-devtools-installer": "3.2.0",
     "eslint": "8.5.0",
     "eslint-plugin-vue": "8.2.0",
     "nano-staged": "0.5.0",
     "playwright": "1.17.1",
+    "prettier": "^2.5.1",
     "simple-git-hooks": "2.7.0",
     "typescript": "4.5.4",
     "vite": "2.7.9",
     "vue-tsc": "0.30.1"
   },
   "dependencies": {
+    "electron": "16.0.5",
+    "electron-devtools-installer": "3.2.0",
     "electron-updater": "4.6.5",
+    "naive-ui": "^2.23.2",
+    "puppeteer-core": "^13.0.1",
+    "puppeteer-in-electron": "^3.0.5",
+    "vfonts": "^0.1.0",
     "vue": "3.2.26"
   }
 }

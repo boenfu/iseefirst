@@ -1,11 +1,11 @@
+import type {BinaryLike} from 'crypto';
+import {createHash} from 'crypto';
+
 /**
  * @module preload
  */
 
 import {contextBridge} from 'electron';
-
-import type {BinaryLike} from 'crypto';
-import {createHash} from 'crypto';
 
 /**
  * The "Main World" is the JavaScript context that your main renderer code runs in.
